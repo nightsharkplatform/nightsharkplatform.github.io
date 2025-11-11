@@ -1,42 +1,49 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Introducing Variables
 
-In NightShark, variables serve as placeholders for storing data values, which can be used and manipulated throughout your script. This section will guide you through the process of declaring and using variables in NightShark, complete with examples.
+Variables are the building blocks of every NightShark strategy. They capture market state, track progress, and feed decision logic throughout your script.
 
-### Why Use Variables?
+## Declaring Variables
 
-Variables are incredibly useful for storing metrics or conditions that you'll need to reference multiple times throughout your script. By using variables, you can make your code more readable and maintainable.
+NightShark uses the `:=` assignment operator:
 
-### How to Declare a Variable
-
-Declaring a variable in NightShark is straightforward. Use the `:=` operator to assign a value to a variable. Here's the syntax:
-
-```plaintext
-VariableName := Value
+```ahk
+variableName := value
 ```
 
-### Example 1: Storing Profit and Loss Metrics
+The assignment can be a literal, a function result, or another variable.
 
-For instance, you might want to keep track of the current position's profit or loss and the day's profit or loss. Here's how you can declare these variables:
+<img src={require('../variables.gif').default} alt="Recording variables in NightShark" width="720" />
 
-```plaintext
-CurrentPositionProfitLoss := toNumber(area[1])
-DayProfitLoss := toNumber(area[2])
+## Capturing Market Data
+
+Pair variables with `read_areas()` to store the latest on-screen values:
+
+```ahk
+read_areas()
+currentTradePL := toNumber(area[1])
+dayPL          := toNumber(area[2])
 ```
 
-In this example, `CurrentPositionProfitLoss` and `DayProfitLoss` are variables that store the numerical values of `area[1]` and `area[2]`, respectively.
+Now you can reuse `currentTradePL` and `dayPL` everywhere instead of repeatedly calling `toNumber()`.
 
-### Example 2: Using Variables in Conditions
+## Using Variables in Logic
 
-Once declared, these variables can be used in conditional statements, calculations, or even passed into custom functions. For example:
-```plaintext
-if (CurrentPositionProfitLoss > 20) {
-    // Your code for when profit is greater than 20
+```ahk
+if (currentTradePL >= 25) {
+    Click(point.b) ; Lock in profits
+} else if (currentTradePL <= -40) {
+    Click(point.c) ; Trigger your custom safety handler
 }
 ```
 
+## Best Practices
 
-By using variables like `CurrentPositionProfitLoss`, you can make your conditions more readable and easier to manage.
+- **Name clearly** — e.g., `maxLossPerTrade` beats `ml`.  
+- **Scope wisely** — declare variables near the logic that owns them; promote to globals only when necessary.  
+- **Update intentionally** — reassign the variable as soon as new data arrives so your logic always reflects the latest state.
+
+With variables under control, you’re ready to start packaging logic into reusable functions.

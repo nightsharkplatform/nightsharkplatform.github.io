@@ -1,54 +1,77 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Defining Functions
 
-Defining custom functions in NightShark is a powerful way to encapsulate specific actions or conditions, making your code more modular, reusable, and easier to manage. This section will guide you through the process of defining functions, step-by-step, with additional examples.
+Functions let you package trading logic once and reuse it everywhere. They reduce duplication, clarify intent, and make it easier to test new ideas.
 
-### Step 1: Decide the Purpose of the Function
+## Function Syntax
 
-Before defining a function, decide what specific task or condition the function will handle. For example, you might want a function to determine whether to buy or sell based on certain conditions.
+```ahk
+FunctionName(param1, param2) {
+    ; Optional: expose outer-scope variables
+    global sharedVariable
 
-### Step 2: Define the Function
-
-Use the following syntax to define a function:
-
-```plaintext
-FunctionName() {
-    // Your code here
+    ; Body
+    return expression
 }
 ```
 
-### Step 3: Use `global` if Necessary
+Key ideas:
 
-If your function needs to access variables that are defined outside of it, include the `global` keyword at the beginning of the function.
+- Parameters are optional—omit them for simple helpers.  
+- Use `global` inside the function when you need to access variables defined outside.  
+- Always `return` the value you want to pass back to the caller.
 
-### Example 1: ShouldBuy Function
+## Example: Trade Signals
 
-Here's an example function called `ShouldBuy` that encapsulates the conditions under which a buy order should be placed:
-
-```plaintext
+```ahk
 ShouldBuy() {
-    global
-    return (toNumber(area[1]) > 20)
+    global area
+    return (toNumber(area[1]) >= 20)
 }
-```
 
-
-In this example, the function uses the `global` keyword to access the `area` variable, which is assumed to be defined globally. It then checks if `area[1]` is greater than 20 and returns the result.
-
-### Example 2: ShouldSell Function
-
-Similarly, you can define a function to encapsulate the conditions for selling:
-
-```plaintext
 ShouldSell() {
-    global
-    return (toNumber(area[1]) < -10)
+    global area
+    return (toNumber(area[1]) <= -15)
 }
 ```
 
-This function checks if `area[1]` is less than -10 and returns the result.
+With these helpers, the main loop becomes easier to read:
 
-By defining such functions, you can make your main trading logic much cleaner and easier to understand, as you can replace complex conditions with function calls like `ShouldBuy()` or `ShouldSell()`.
+```ahk
+read_areas()
+
+if (ShouldBuy()) {
+    Click(point.a)
+} else if (ShouldSell()) {
+    Click(point.b)
+}
+```
+
+## Example: Utility Function with Input
+
+```ahk
+IsDailyDrawdownExceeded(dailyLimit) {
+    global area
+    return (toNumber(area[2]) <= dailyLimit)
+}
+```
+
+Call it with a custom threshold:
+
+```ahk
+if (IsDailyDrawdownExceeded(-500)) {
+    Log("Drawdown limit reached—script stopped")
+    stopCode()
+}
+```
+
+## Tips for Clean Functions
+
+- **Single responsibility** — each function should answer one question or perform one action.  
+- **Meaningful names** — describe the decision or behavior (`ShouldCloseTrade`, `LockProfit`).  
+- **Short bodies** — if a function exceeds ~10 lines, consider breaking it up.
+
+Next, combine these functions with loops to keep your automation responsive.

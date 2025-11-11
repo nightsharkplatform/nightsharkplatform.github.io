@@ -1,35 +1,49 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
-# Converting to Number
+# Converting to Numbers
 
-The `toNumber()` function in NightShark is essential for converting area values into numerical data. This conversion is crucial when you need to perform mathematical operations or comparisons on the data you've collected. This section will elaborate on the function's importance, its usage, and provide examples for better understanding.
+On-screen values arrive as text—`$143.25`, `-12.5`, `1.25%`. Use `toNumber()` to turn them into numeric data NightShark can compare, add, and subtract.
 
-### Why Use toNumber()?
+## Syntax
 
-Often, the values read from screen areas might be in a format that is not suitable for mathematical operations. The `toNumber()` function allows you to convert these values into a numerical format, enabling you to perform calculations or make comparisons.
-
-### How to Use toNumber()
-
-The `toNumber()` function takes an area as an argument and returns its numerical equivalent.
-
- 
-toNumber(area[1])
-
-
-In this example, `area[1]` is converted into a number, which can then be used in mathematical operations or conditional statements.
-
-### Example: Using toNumber in a Condition
-
-Here's an example that uses `toNumber()` in a conditional statement:
-
+```ahk
+numericValue := toNumber(area[index])
 ```
-if (toNumber(area[1]) > 20 || toNumber(area[1]) < -10) {
-    // Your code here
+
+`area[index]` references the region you mapped in the desktop app. `toNumber()` strips out currency symbols and commas automatically.
+
+## Practical Examples
+
+```ahk
+read_areas()
+
+openPL  := toNumber(area[1])
+dailyPL := toNumber(area[2])
+
+if (openPL >= 30) {
+    Click(point.b) ; Flatten the position
+}
+
+if (dailyPL <= -400) {
+    Log("Daily loss limit reached—script stopped")
+    stopCode()
 }
 ```
 
-In this example, `toNumber()` converts `area[1]` to a number, which is then used in a conditional statement to check if it's greater than 20 or less than -10.
+## Handling Edge Cases
 
-By leveraging the `toNumber()` function, you can make your NightShark scripts more versatile and capable of handling a wider range of trading scenarios.
+- **Missing data** — `toNumber()` returns `0` if the area is blank. Add guards if that would trigger unwanted actions.  
+- **Percentages** — values like `1.25%` become `1.25`. Divide by `100` if you need the decimal (0.0125).  
+- **Negative numbers** — they keep the minus sign, so `<` checks work as expected.
+
+:::tip Debugging conversions
+Use `Log()` messages to confirm how values are parsed, then open the **Log** window from the NightShark toolbar to review the output:
+
+```ahk
+Log("Current PL: " . toNumber(area[1]))
+```
+:::
+
+Convert first, then compare—your logic will be faster, safer, and easier to read.

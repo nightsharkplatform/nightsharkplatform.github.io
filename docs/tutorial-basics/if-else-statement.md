@@ -1,53 +1,60 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
-# If-Else statement
-If-else statements are a fundamental part of programming logic, and they're no less important in NightShark. These conditional statements allow you to execute different blocks of code based on whether a condition is true or false. This section will delve into the importance of using if-else statements in your NightShark scripts, how to implement them, and provide examples for better understanding.
+# If-Else Statements
 
-### Why Use If-Else Statements?
+Conditional statements let NightShark scripts respond intelligently to market data. Use `if`, `else if`, and `else` blocks to define exact rules for when your automation should act.
 
-If-else statements are crucial for making decisions in your script. Whether you're deciding to place a buy or sell order, stop a trade, or perform some other action, if-else statements give you the control you need.
+## Syntax
 
-### Basic Syntax
-
-The basic syntax for an if-else statement in NightShark is as follows:
-
-``` 
+```ahk
 if (condition) {
-    // Code to execute if condition is true
+    ; Executes when condition is true
+} else if (anotherCondition) {
+    ; Executes when the first condition is false
+    ; and anotherCondition is true
 } else {
-    // Code to execute if condition is false
+    ; Fallback when none of the conditions match
 }
 ```
 
+Each condition evaluates to `true` or `false`. NightShark checks them from top to bottom and runs the first block that passes.
 
-### Example: Basic If-Else Statement
+## Core Trading Pattern
 
-Here's a simple example that uses an if-else statement to decide whether to buy or sell based on a condition:
+```ahk
+currentPL := toNumber(area[1])
 
-```
-if (toNumber(area[1]) > 20) {
-    Click(point.a)  // Code for buying
+if (currentPL >= 30) {
+    Click(point.b) ; Take profit
+} else if (currentPL <= -20) {
+    Click(point.c) ; Stop loss
 } else {
-    Click(point.b)  // Code for selling
+    ; Hold position
 }
 ```
 
+## Combining Multiple Signals
 
-### Example: Using Multiple Conditions
+```ahk
+trend     := toNumber(area[3])
+volume    := toNumber(area[4])
+currentPL := toNumber(area[1])
 
-You can also use multiple conditions in your if-else statements:
-
-``` 
-if (toNumber(area[1]) > 20) {
-    Click(point.a)  // Code for buying
-} else if (toNumber(area[1]) < -10) {
-    Click(point.b)  // Code for selling
+if (trend > 0 && volume >= 150000) {
+    Click(point.a) ; Enter long on strong uptrend + volume
+} else if (trend < 0 && currentPL >= 40) {
+    Click(point.b) ; Exit when uptrend fades after profit
 } else {
-    // Code for doing nothing
+    ; Stand by
 }
 ```
 
+## Best Practices
 
-By mastering if-else statements, you can create more complex and flexible trading algorithms in NightShark.
+- **Order matters** — put the most specific condition first, fallbacks last.  
+- **Reuse variables** — compute values once, then compare them to different thresholds.  
+- **Log branches** — during testing, log which branch fired to validate your assumptions.
+
+When combined with loops and functions, if-else statements become the decision engine of your automation.

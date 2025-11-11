@@ -2,59 +2,77 @@
 sidebar_position: 1
 ---
 
-# Installation
-In this article, we'll walk you through the process of setting up the NightShark desktop application on your Windows PC. Let's get started!
+# NightShark Desktop Installation
 
-## Step 1: Visit the NightShark Website
+This guide walks you through every step required to install the NightShark desktop application on a Windows PC, activate your account, and confirm that the platform is ready for live trading.
 
-Begin by visiting the official [NightShark website](https://nightshark.io). Please note that as of now, NightShark is exclusively available for Windows PC.
+## Before You Begin
 
-## Step 2: Download the Installation File
+- A Windows 10 or 11 computer with administrator access  
+- A NightShark account email you can verify immediately  
+- A stable internet connection to complete downloads and activation
 
-While on the website, navigate to the home page and download the installation file for NightShark.
-![Alt text](image.png)
+:::tip Need a quick start?
+Keep the NightShark portal open in a browser tab—you will switch between the desktop installer and the web dashboard throughout the setup.
+:::
 
-## Step 3: Registration
+## Phase 1 — Download and Register
 
-As the installation file downloads, let's go ahead and complete the registration process. For the sake of this guide, we've created a test email. Provide your information, carefully review the terms and conditions, and proceed to sign up.
-you can use the [registration link ](https://nightshark.io/#/register)
- to proceed with the registration.
+1. **Visit the NightShark website**  
+   Go to [nightshark.io](https://nightshark.io). NightShark is currently available only for Windows.  
 
-![Alt text](image-1.png)
+2. **Download the desktop installer**  
+   From the homepage, click the download button to grab the latest NightShark setup file.
 
-## Step 4: Email Verification
+  ![](2025-11-11-15-34-21.png)
 
-Upon signing up, you'll receive a verification email in your inbox. Follow the provided instructions to verify your email address. Once verified, you'll receive a confirmation of success.
+3. **Create your NightShark account**  
+   While the installer downloads, open the [registration form](https://nightshark.io/#/register). Provide your information, accept the terms, and submit the signup form.
 
-## Step 5: Downloading the Zip File
+   ![](2025-11-11-15-35-14.png)
 
-With your email verified, you're now ready to download the installation file. Enter your password, and after logging in, proceed to download the "Zip file." Open it using your preferred method and extract its contents.
+4. **Verify your email address**  
+   NightShark sends a verification email within a minute. Click the verification link to activate your portal access before proceeding.
 
-## Step 6: Explore the Extracted Directory
+## Phase 2 — Install the Desktop App
 
-After extracting the contents of the "zip file," open the extracted directory. You may encounter a pop-up message since we are not yet registered as publishers. Simply bypass this by choosing "Run Anyway."
-![Alt text](image-2.png)
+5. **Sign in to the portal and download the ZIP package**  
+   Log in at [nightshark.io](https://nightshark.io) with your new credentials. Download the NightShark ZIP archive from the dashboard and extract it to a convenient folder.
 
-## Step 7: Logging In
 
-The NightShark application login page will appear. Utilize the same credentials you used during the website registration process. If you prefer not to enter your password each time, select the "Remember Me" option.
-![Alt text](image-4.png)
+6. **Sign in from the desktop app**  
+   When the NightShark login window appears, enter the same email and password used on the website. Select **Remember me** if you want NightShark to cache your credentials securely.
 
-## Step 8: Account Activation
+ ![](2025-11-11-15-37-42.png)
 
-If you receive a prompt to activate your account, it signifies that your registration is complete but requires activation. To proceed, login to your [nightshark.io](https://nightshark.io) website and login with your credentials. Once logged in, click on **Activate Your Account** link from the sidebar. You should see a button that says Activate your Account.
-![Alt text](image-5.png)
+7. **Daily limit for Free users**  
+   We allow daily 1 hour of runtime for you to test drive our software for free. with this you would be able to check the compatibility of our software with your desktop before you sign up for a subscription.
 
-Once you click on the button, you will be redirected to strip page where you can make your payment.
+ ![](2025-11-11-15-58-36.png)
 
-![Alt text](image-6.png)
+   
 
-## Step 9: Payment and Activation
 
-Once your payment is successfully processed, your NightShark account will be automatically activated. Fill in the necessary details, complete the payment, and then proceed to verify your dashboard. You'll notice that your account status is now "active,".
-![Alt text](image-7.png)
+## Phase 3 — Activate Your Account
 
-## Step 10: Testing the Application
+8. **Trigger the activation flow**  
+   If you see an “Activate your account” prompt in the desktop app, switch back to the web portal. From the sidebar, open **Activate Your Account** and follow the on-screen instructions.
 
- On the main application page, ensure that you are able to login to NightShark Desktop application and can view the NightShark Dashboard.
-![Alt text](image-8.png)
+   ![](2025-11-11-15-45-42.png)
+
+9. **Complete payment**  
+   You will be redirected to the secure Stripe checkout. Enter your billing details and submit the payment request.
+
+   ![](2025-11-11-15-50-41.png)
+
+
+## Phase 4 — Validate Your Setup
+
+10. **Reopen the Nightshark desktop app**  
+    After logging in, You should see the time restriction being removed.
+
+   ![](%20image.png.png)
+
+:::info What’s next?
+Explore the strategy templates inside the app or continue with the tutorials in this documentation to build your first automated workflow.
+:::

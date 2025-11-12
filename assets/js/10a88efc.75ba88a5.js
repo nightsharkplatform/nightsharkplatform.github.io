@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunknight_shark_docs=globalThis.webpackChunknight_shark_docs||[]).push([[755],{4061:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);

@@ -2,77 +2,46 @@
 sidebar_position: 1
 ---
 
-# NightShark Desktop Installation
+# YouTube Code
 
-This guide walks you through every step required to install the NightShark desktop application on a Windows PC, activate your account, and confirm that the platform is ready for live trading.
+Welcome to **ProcessOverProfit** - code examples and resources from our YouTube channel for building automated trading systems.
 
-## Before You Begin
+## What is Trading Automation?
 
-- A Windows 10 or 11 computer with administrator access  
-- A NightShark account email you can verify immediately  
-- A stable internet connection to complete downloads and activation
+Trading automation allows you to execute trading strategies automatically using algorithms and bots. Instead of manually monitoring markets and placing trades, automated systems can:
 
-:::tip Need a quick start?
-Keep the NightShark portal open in a browser tab—you will switch between the desktop installer and the web dashboard throughout the setup.
-:::
+- **Execute trades 24/7** - Never miss an opportunity, even while you sleep
+- **Remove emotion** - Make decisions based on data and logic, not fear or greed
+- **Backtest strategies** - Test your ideas on historical data before risking real capital
+- **Scale efficiently** - Run multiple strategies across different markets simultaneously
 
-## Phase 1 — Download and Register
+## Getting Started
 
-1. **Visit the NightShark website**  
-   Go to [nightshark.io](https://nightshark.io). NightShark is currently available only for Windows.  
+To begin automating your trading, you'll need:
 
-2. **Download the desktop installer**  
-   From the homepage, click the download button to grab the latest NightShark setup file.
+1. **A trading account** with a broker that supports API access
+2. **Programming knowledge** (Python is recommended for most platforms)
+3. **A clear trading strategy** to automate
+4. **Risk management rules** to protect your capital
 
-  ![](2025-11-11-15-34-21.png)
+## Core Principles
 
-3. **Create your NightShark account**  
-   While the installer downloads, open the [registration form](https://nightshark.io/#/register). Provide your information, accept the terms, and submit the signup form.
+### Process Over Profit
 
-   ![](2025-11-11-15-35-14.png)
+The name says it all - focus on building robust, repeatable processes rather than chasing quick profits. A well-designed automated trading system should:
 
-4. **Verify your email address**  
-   NightShark sends a verification email within a minute. Click the verification link to activate your portal access before proceeding.
+- Follow a clear, documented strategy
+- Have built-in risk management
+- Be tested thoroughly before live deployment
+- Be monitored and optimized continuously
 
-## Phase 2 — Install the Desktop App
+### Key Components
 
-5. **Sign in to the portal and download the ZIP package**  
-   Log in at [nightshark.io](https://nightshark.io) with your new credentials. Download the NightShark ZIP archive from the dashboard and extract it to a convenient folder.
+Every automated trading system needs:
 
+- **Strategy Logic** - The rules that determine when to buy and sell
+- **Risk Management** - Position sizing, stop losses, and maximum drawdown limits
+- **Execution Engine** - The code that connects to your broker and places orders
+- **Monitoring System** - Tools to track performance and detect issues
 
-6. **Sign in from the desktop app**  
-   When the NightShark login window appears, enter the same email and password used on the website. Select **Remember me** if you want NightShark to cache your credentials securely.
-
- ![](2025-11-11-15-37-42.png)
-
-7. **Daily limit for Free users**  
-   We allow daily 1 hour of runtime for you to test drive our software for free. with this you would be able to check the compatibility of our software with your desktop before you sign up for a subscription.
-
- ![](2025-11-11-15-58-36.png)
-
-   
-
-
-## Phase 3 — Activate Your Account
-
-8. **Trigger the activation flow**  
-   If you see an “Activate your account” prompt in the desktop app, switch back to the web portal. From the sidebar, open **Activate Your Account** and follow the on-screen instructions.
-
-   ![](2025-11-11-15-45-42.png)
-
-9. **Complete payment**  
-   You will be redirected to the secure Stripe checkout. Enter your billing details and submit the payment request.
-
-   ![](2025-11-11-15-50-41.png)
-
-
-## Phase 4 — Validate Your Setup
-
-10. **Reopen the Nightshark desktop app**  
-    After logging in, You should see the time restriction being removed.
-
-   ![](%20image.png.png)
-
-:::info What’s next?
-Explore the strategy templates inside the app or continue with the tutorials in this documentation to build your first automated workflow.
-:::
+Ready to build your first automated trading system? Continue reading our documentation to learn how.

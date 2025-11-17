@@ -21,3 +21,15 @@
   align-items: center;
   justify-content: center;
 }
+
+.nightsharkButton {
+  background-color: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.nightsharkButton:hover {
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
+  color: white !important;
+}

@@ -34,9 +34,89 @@
 pre[class*="language-"],
 code[class*="language-"] {
   background-color: #000000 !important;
+  white-space: pre !important;
+  overflow-x: auto !important;
+  word-wrap: normal !important;
+  word-break: normal !important;
 }
 
 /* Code block container */
 .theme-code-block {
   background-color: #000000 !important;
+  position: relative;
+}
+
+/* Add padding to code content to prevent overlap with buttons */
+.theme-code-block pre {
+  padding-top: 3rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Hide the word wrap toggle button */
+.theme-code-block button[title="Toggle word wrap"],
+.theme-code-block button[aria-label="Toggle word wrap"],
+button[class*="wordWrapButton"],
+button.wordWrapButtonEnabled_uzNF,
+button.clean-btn[aria-label="Toggle word wrap"] {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Disable text wrapping in code blocks */
+.theme-code-block pre,
+.theme-code-block code {
+  white-space: pre !important;
+  word-wrap: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* Make copy code button always visible with text */
+.theme-code-block .theme-code-block-highlighted-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Code block buttons container - always show */
+.theme-code-block-button-group {
+  opacity: 1 !important;
+}
+
+/* Copy button styling - always visible */
+.theme-code-block button[class*="copyButton"],
+.theme-code-block button.clean-btn {
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.theme-code-block button[class*="copyButton"]:hover,
+.theme-code-block button.clean-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Move copy button to left side */
+.theme-code-block div[class*="codeBlockTitle"],
+.theme-code-block div[class*="buttonGroup"] {
+  right: auto !important;
+  left: 1rem !important;
+}
+
+/* Show "Copy code" text always */
+.theme-code-block button[class*="copyButton"]::before,
+.theme-code-block button.clean-btn[aria-label*="Copy"]::before {
+  content: "Copy code" !important;
+  margin-right: 4px !important;
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }

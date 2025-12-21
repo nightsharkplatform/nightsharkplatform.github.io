@@ -71,6 +71,12 @@ const config = {
             position: "left",
             label: "Tutorial",
           },
+          {
+            type: "doc",
+            docId: "macos/intro",
+            position: "left",
+            label: "MacOS",
+          },
         ],
       },
       footer: {

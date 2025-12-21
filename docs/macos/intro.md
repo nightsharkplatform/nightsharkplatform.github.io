@@ -15,7 +15,7 @@ NightShark’s real-time trading stack is optimized for Windows. Core services l
 | Any Mac with reliable internet | Rent a Windows VPS, connect through Remote Desktop, and leave NightShark running in the cloud. | Paid (subscription) | [NYC Servers Windows VPS (referral link)](https://newyorkcityservers.com/billing/aff.php?aff=635) |
 | Refurb Intel MacBook (2017–2019) | Buy a used Intel MacBook (often <$300 on resale sites), install Windows with Boot Camp, and dedicate it to trading. | Paid (one-time) | [Apple Boot Camp guide](https://support.apple.com/en-us/102622) |
 
-Choose the path that best fits your hardware and budget, then follow the linked guide to get Windows ready before installing NightShark. Tutorials in this section will point to the relevant Windows setup steps where needed.
+Choose the path that best fits your hardware and budget, then follow the linked guide to get Windows ready before installing NightShark. Tutorials in this section will point to the relevant Windows setup steps where needed. 
 
 :::tip
 NightShark requires the display to stay on because its vision models read live pixels from the screen to drive trading decisions. The app keeps the session awake automatically while it is running.

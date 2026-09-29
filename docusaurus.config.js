@@ -77,6 +77,12 @@ const config = {
             position: "left",
             label: "MacOS",
           },
+          {
+            to: "/models",
+            position: "left",
+            label: "AI Models Changelog",
+            activeBaseRegex: "^/models",
+          },
         ],
       },
       footer: {

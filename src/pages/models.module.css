@@ -1,0 +1,358 @@
+.page {
+  --ifm-background-color: #fff;
+  --ifm-heading-color: #202027;
+  --ifm-color-emphasis-600: #7a7f8c;
+  --ifm-color-emphasis-700: #5f6570;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  background:
+    radial-gradient(circle at 50% 0%, rgba(75, 46, 133, 0.1), transparent 24rem),
+    #fff;
+  color: #30323a;
+}
+
+.container {
+  width: min(780px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 3.25rem;
+}
+
+.header {
+  max-width: 640px;
+  margin-bottom: 1.75rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #4b2e85;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--ifm-heading-color);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+
+.intro {
+  max-width: 650px;
+  margin: 0.6rem 0 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
+.legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legend i {
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 50%;
+}
+
+.addedDot {
+  background: #34ff1a;
+}
+
+.removedDot {
+  background: #ff0000;
+}
+
+.timeline {
+  position: relative;
+}
+
+.dateGroup {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.dateGroup:last-child {
+  margin-bottom: 0;
+}
+
+.dateGroupHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.55rem;
+  padding: 0 0.25rem;
+}
+
+.dateHeading {
+  margin: 0;
+  color: #4b2e85;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.dateSummary {
+  color: #8b8792;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.dateChanges {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e8e4ef;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 30px rgba(35, 27, 50, 0.055);
+}
+
+.dateChanges::before {
+  position: absolute;
+  top: 2.2rem;
+  bottom: 2.2rem;
+  left: 2.35rem;
+  width: 2px;
+  background: #d8cff0;
+  content: '';
+}
+
+.timelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.78rem 1rem;
+  border-bottom: 1px solid #eeeaf3;
+}
+
+.timelineItem:last-child {
+  border-bottom: 0;
+}
+
+.iconMarker {
+  z-index: 1;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 2px solid #d7d0e5;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 12px rgba(25, 18, 42, 0.12);
+}
+
+.iconMarker svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.iconMarker svg[fill='#f1f8ff'],
+.iconMarker svg [fill='#f5f5f4'] {
+  fill: #17171e;
+}
+
+.metaIcon path {
+  fill: #0082fb;
+}
+
+.removedMarker {
+  box-shadow: 0 0 0 2px rgba(210, 75, 87, 0.5), 0 10px 24px rgba(25, 18, 42, 0.18);
+  filter: grayscale(1);
+}
+
+.changeContent {
+  min-width: 0;
+  padding-top: 0.08rem;
+}
+
+.changeHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.changeHeading h3 {
+  margin: 0;
+  color: var(--ifm-heading-color);
+  font-size: clamp(1rem, 2.2vw, 1.12rem);
+  letter-spacing: -0.018em;
+  line-height: 1.4;
+}
+
+.status {
+  --status-shadow-color: rgba(9, 12, 60, 0.2);
+  --status-inner-shadow-top: rgba(255, 255, 255, 0.28);
+  --status-inner-shadow-bottom: rgba(255, 255, 255, 0.16);
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  margin-top: 0.12rem;
+  border: 1px solid #000;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--status-gradient-top) 0%,
+    var(--status-gradient-middle) 50%,
+    var(--status-gradient-bottom) 100%
+  );
+  box-shadow:
+    0 4px 10px var(--status-shadow-color),
+    0 1px 3px var(--status-shadow-color),
+    inset 0 1px 1px var(--status-inner-shadow-top),
+    inset 0 -1px 2px var(--status-inner-shadow-bottom);
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  line-height: 1;
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.28);
+  text-transform: uppercase;
+}
+
+.status::before {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 70%;
+  height: 6px;
+  border-radius: inherit;
+  background: var(--status-shine-top);
+  content: '';
+  filter: blur(5px);
+  opacity: 0.7;
+  transform: translateX(-50%);
+}
+
+.status::after {
+  position: absolute;
+  right: 14%;
+  bottom: 0;
+  left: 14%;
+  height: 1px;
+  border-radius: 50%;
+  background: var(--status-shine-bottom);
+  box-shadow: 0 -1px 5px var(--status-shine-bottom);
+  content: '';
+  opacity: 0.9;
+}
+
+.statusLabel {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-width: 4.5rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: inherit;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.34),
+    transparent 6px
+  );
+  background-position: 0 -4px;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.addedStatus {
+  --status-gradient-top: #72ff60;
+  --status-gradient-middle: #34ff1a;
+  --status-gradient-bottom: #19d905;
+  --status-shine-top: #efffec;
+  --status-shine-bottom: #b9ffb0;
+  color: #000;
+  text-shadow: 0 0.5px 0.5px rgba(255, 255, 255, 0.55);
+}
+
+.removedStatus {
+  --status-gradient-top: #ff5454;
+  --status-gradient-middle: #ff0000;
+  --status-gradient-bottom: #c90000;
+  --status-shine-top: #ffe5e5;
+  --status-shine-bottom: #ff9b9b;
+}
+
+.meta {
+  margin: 0.2rem 0 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.meta span {
+  margin: 0 0.3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: min(780px, calc(100% - 1.5rem));
+    padding: 2rem 0 2.75rem;
+  }
+
+  .header {
+    margin-bottom: 1.75rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .dateGroupHeader {
+    display: block;
+  }
+
+  .dateSummary {
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  .dateChanges::before {
+    left: 1.98rem;
+  }
+
+  .timelineItem {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .iconMarker {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .iconMarker svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .changeContent {
+    padding-top: 0;
+  }
+
+  .changeHeading {
+    display: block;
+  }
+
+  .status {
+    display: inline-block;
+    margin-top: 0.4rem;
+  }
+}
